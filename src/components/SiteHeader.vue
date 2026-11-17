@@ -13,13 +13,13 @@ watch(() => route.fullPath, () => (open.value = false))
 
 <template>
   <header class="header">
-    <div class="container logos">
+    <div class="wrap logos">
       <img :src="ryss" alt="Rythu Sadhikara Samstha" class="logo logo-round" />
       <RouterLink to="/" aria-label="Home"><img :src="iggaarl" alt="IGGAARL – Indo-German Global Academy for Agroecology Research and Learning" class="logo logo-wide" /></RouterLink>
       <img :src="apGov" alt="Government of Andhra Pradesh" class="logo logo-round" />
     </div>
 
-    <nav class="container nav" aria-label="Main">
+    <nav class="wrap nav" aria-label="Main">
       <button class="menu-toggle" :aria-expanded="open" @click="open = !open">
         <span>Menu</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -43,6 +43,10 @@ watch(() => route.fullPath, () => (open.value = false))
   top: 0;
   z-index: 10;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.wrap {
+  width: 100%;
+  padding-inline: clamp(16px, 3vw, 48px);
 }
 .logos {
   display: flex;
