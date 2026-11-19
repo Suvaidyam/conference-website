@@ -21,7 +21,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = `${to.meta.title} · ICNF 2026`
+  document.title = `${to.meta.title} · ICNF 2027`
 })
 
 export default router
