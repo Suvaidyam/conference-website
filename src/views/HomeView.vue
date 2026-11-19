@@ -15,10 +15,6 @@ import hero from '../assets/img/hero.jpg'
       <div class="snapshot">
         <div class="snapshot-head">
           <h2>Conference Snapshot</h2>
-          <div class="btn-row">
-            <RouterLink to="/call-for-papers" class="btn btn-gold">Register Now</RouterLink>
-            <RouterLink to="/themes" class="btn btn-outline-light">Submit Abstract</RouterLink>
-          </div>
         </div>
         <dl>
           <div v-for="item in conference.snapshot" :key="item.label">

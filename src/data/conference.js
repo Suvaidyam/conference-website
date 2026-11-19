@@ -2,15 +2,15 @@
 // Items marked TODO were placeholders in the deck and need real content.
 
 export const conference = {
-  title: 'International Conference on Natural Farming - 2026',
+  title: 'International Conference on Natural Farming - 2027',
   tagline: 'Global Farmer-centric, Science-driven Natural Farming Food System Platform',
   intro:
     'Hosted by RySS’s APCNF and IGGAARL to share, debate, consolidate and advance emerging farmer-led NF practices, models, approaches, and scientific evidence; and explore ways forward.',
   snapshot: [
     { label: 'Dates', value: '4–5 November 2027' },
-    { label: 'Venue', value: 'Vijayawada Convention Centre, Andhra Pradesh, India' },
-    { label: 'Theme', value: '“Scaling Agroecology for Climate Resilience and Farmer Prosperity”' },
+    { label: 'Venue', value: 'Indian Institute of Management, Vishakhapatnam (IIMV)' },
     { label: 'Participants Expected', value: '400+ Delegates from 10+ Countries' },
+    { label: 'Theme', value: '“Scaling Agroecology for Climate Resilience and Farmer Prosperity”' },
   ],
 }
 
@@ -50,8 +50,46 @@ export const speakers = Array.from({ length: 12 }, (_, i) => ({
 }))
 export const speakersIntro = 'International leaders from the …' // TODO: one-liner
 
-export const callForPapers =
-  'One paragraph with T&C, response time, eligibility, etc.' // TODO
+// Conference schedule, from "Conf Schedule for Website - Sample.pptx".
+// Each row is either a full-width break ({ time, span }) or one cell per
+// venue in `halls` order; null means nothing scheduled in that venue.
+// TODO: replace hall names and fill each `link` with the viewing URL.
+const session = (n) => ({ title: `Session-${n}`, link: '' })
+const sessionRow = (first) => [null, ...[0, 1, 2, 3, 4].map((i) => session(first + i))]
+const empty = [null, null, null, null, null]
+
+export const schedule = {
+  halls: ['Auditorium', 'Hall-1/Name', 'Hall-2/Name', 'Hall-3/Name', 'Hall-4/Name', 'Hall-5/Name'],
+  days: [
+    {
+      label: 'Day 1',
+      date: 'Thursday, 4 November 2027',
+      shortDate: 'Thu, 4 Nov',
+      rows: [
+        { time: '9:00', cells: [{ title: 'Inauguration', link: '' }, ...empty] },
+        { time: '11:00', cells: sessionRow(1) },
+        { time: '12:30', cells: sessionRow(6) },
+        { time: '14:00', span: 'Lunch Break' },
+        { time: '15:00', cells: sessionRow(11) },
+        { time: '17:00', cells: [{ title: 'Plenary' }, ...empty] },
+        { time: '19:00', span: 'Gala Dinner' },
+      ],
+    },
+    {
+      label: 'Day 2',
+      date: 'Friday, 5 November 2027',
+      shortDate: 'Fri, 5 Nov',
+      rows: [
+        { time: '9:00', cells: [{ title: 'Declaration Announcement' }, ...empty] },
+        { time: '11:00', cells: sessionRow(16) },
+        { time: '12:30', cells: sessionRow(21) },
+        { time: '14:00', span: 'Lunch Break' },
+        { time: '15:00', cells: sessionRow(26) },
+        { time: '17:00', cells: [{ title: 'Conclusion & Closing Ceremony' }, ...empty] },
+      ],
+    },
+  ],
+}
 
 export const venue = {
   intro:
@@ -65,15 +103,16 @@ export const venue = {
 }
 
 export const timeline = [
-  { label: 'Abstract Submission Opens', date: '04 July 2026' },
-  { label: 'Abstract Submission Deadline', date: '04 September 2026' },
-  { label: 'Pre-conference Workshop', date: '01 November 2026' },
+  { label: 'Curtain Raiser', date: '02 March 2027' },
+  { label: 'Conference Inauguration', date: '03 March 2027' },
+  { label: 'Signing of NF Declaration', date: '04 March 2027' },
+  { label: 'Post Conference Field Visit', date: '05 March 2027' },
 ]
 
 export const organisers = ['Rythu Sadhikara Samstha (RySS)', 'Government of Andhra Pradesh']
 export const coOrganisers = [
   'Potsdam Institute of Climate Impact Research (PIK), Germany',
-  'Wageningen University & Research, Netherlands',
+  'Indian Institute of Management, Vishakhapatnam (IIMV)',
   'International Crops Research Institute for the Semi-Arid Tropics (ICRISAT), India',
   'Thünen Institute, Germany',
   'ICRAF',
@@ -90,7 +129,7 @@ export const navLinks = [
   { to: '/about', label: 'About' },
   { to: '/themes', label: 'Themes' },
   { to: '/speakers', label: 'Speakers' },
-  { to: '/call-for-papers', label: 'Call for Papers' },
+  { to: '/schedule', label: 'Conference Schedule' },
   { to: '/venue', label: 'Venue & Travel' },
   { to: '/contact', label: 'Contact' },
 ]

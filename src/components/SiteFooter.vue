@@ -16,14 +16,14 @@ import { contact, timeline, organisers, coOrganisers } from '../data/conference'
       </section>
 
       <section>
-        <h2>Organisers</h2>
-        <ul><li v-for="o in organisers" :key="o">{{ o }}</li></ul>
-        <h2 class="mt">Co-organisers</h2>
+        <h2>Co-organisers</h2>
         <ul><li v-for="o in coOrganisers" :key="o">{{ o }}</li></ul>
       </section>
 
       <section>
-        <h2>Contact</h2>
+        <h2>Organisers</h2>
+        <ul><li v-for="o in organisers" :key="o">{{ o }}</li></ul>
+        <h2 class="mt">Contact</h2>
         <ul>
           <li><a :href="`mailto:${contact.email}`">{{ contact.email }}</a></li>
           <li><a :href="`tel:${contact.phone.replace(/[^+\d]/g, '')}`">{{ contact.phone }}</a></li>
