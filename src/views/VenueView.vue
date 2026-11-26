@@ -2,7 +2,7 @@
 import { venue, conference } from '../data/conference'
 import PageHeading from '../components/PageHeading.vue'
 
-const venueName = conference.snapshot.find((s) => s.label === 'Venue').value
+const venueName = conference.snapshot.details.find((s) => s.label === 'Venue').value
 </script>
 
 <template>
