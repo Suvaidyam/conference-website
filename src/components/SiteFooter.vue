@@ -1,37 +1,24 @@
 <script setup>
-import { contact, timeline, organisers, coOrganisers } from '../data/conference'
+import { contact } from '../data/conference'
 </script>
 
 <template>
   <footer class="footer">
-    <div class="container grid">
-      <section>
-        <h2>Important Dates</h2>
-        <ol class="timeline">
-          <li v-for="item in timeline" :key="item.label">
-            <span class="date">{{ item.date }}</span>
-            <span>{{ item.label }}</span>
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <h2>Co-organisers</h2>
-        <ul><li v-for="o in coOrganisers" :key="o">{{ o }}</li></ul>
-      </section>
-
-      <section>
-        <h2>Organisers</h2>
-        <ul><li v-for="o in organisers" :key="o">{{ o }}</li></ul>
-        <h2 class="mt">Contact</h2>
-        <ul>
-          <li><a :href="`mailto:${contact.email}`">{{ contact.email }}</a></li>
-          <li><a :href="`tel:${contact.phone.replace(/[^+\d]/g, '')}`">{{ contact.phone }}</a></li>
-          <li>{{ contact.address }}</li>
-        </ul>
-      </section>
+    <section class="container">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><a :href="`mailto:${contact.email}`">{{ contact.email }}</a></li>
+        <li><a :href="`tel:${contact.phone.replace(/[^+\d]/g, '')}`">{{ contact.phone }}</a></li>
+        <li>{{ contact.address }}</li>
+      </ul>
+    </section>
+    <div class="container bottom">
+      <p>© 2026 Rythu Sadhikara Samstha &amp; IGGAARL</p>
+      <p>
+        Designed &amp; developed by
+        <a href="https://suvaidyam.com" target="_blank" rel="noopener" class="credit">Suvaidyam</a>
+      </p>
     </div>
-    <p class="container copy">© 2026 Rythu Sadhikara Samstha &amp; IGGAARL</p>
   </footer>
 </template>
 
@@ -39,13 +26,8 @@ import { contact, timeline, organisers, coOrganisers } from '../data/conference'
 .footer {
   background: #111;
   color: #d6d6d6;
-  padding: 48px 0 24px;
+  padding: 40px 0 24px;
   font-size: 0.9rem;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr 1fr;
-  gap: 40px;
 }
 h2 {
   color: #fff;
@@ -53,14 +35,31 @@ h2 {
   font-weight: 600;
   margin: 0 0 12px;
 }
-.mt { margin-top: 20px; }
-ul, ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+}
 a { color: #d6d6d6; }
 a:hover { color: var(--gold); }
-.timeline li { display: grid; gap: 2px; }
-.timeline .date { color: var(--mint); font-weight: 600; }
-.copy { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a2a; font-size: 0.8rem; color: #8a8a8a; }
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 24px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+  font-size: 0.8rem;
+  color: #8a8a8a;
+}
+.bottom p { margin: 0; }
+.credit { color: #d6d6d6; font-weight: 600; text-decoration: none; }
+.credit:hover { color: var(--gold); text-decoration: underline; }
 @media (max-width: 760px) {
-  .grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact { flex-direction: column; }
 }
 </style>

@@ -2,16 +2,31 @@
 // Items marked TODO were placeholders in the deck and need real content.
 
 export const conference = {
-  title: 'International Conference on Natural Farming - 2027',
+  title: 'International Conference on Natural Farming (ICNF) – 2027',
   tagline: 'Global Farmer-centric, Science-driven Natural Farming Food System Platform',
+  hostedBy: {
+    name: 'Rythu Sadhikara Samstha (RySS)',
+    detail:
+      'Andhra Pradesh Community-managed Natural Farming & Indo-German Global Academy for Agroecology Research and Learning',
+  },
+  coOrganisedBy: {
+    lead: 'Indian Institute of Management, Vishakhapatnam (IIMV)',
+    others: ['WUR', 'ICRISAT', 'ICRAF', 'IFPRI'],
+  },
   intro:
-    'Hosted by RySS’s APCNF and IGGAARL to share, debate, consolidate and advance emerging farmer-led NF practices, models, approaches, and scientific evidence; and explore ways forward.',
-  snapshot: [
-    { label: 'Dates', value: '4–5 November 2027' },
-    { label: 'Venue', value: 'Indian Institute of Management, Vishakhapatnam (IIMV)' },
-    { label: 'Participants Expected', value: '400+ Delegates from 10+ Countries' },
-    { label: 'Theme', value: '“Scaling Agroecology for Climate Resilience and Farmer Prosperity”' },
-  ],
+    'Share, debate, consolidate and advance emerging farmer-led NF practices, models, approaches and scientific evidence; and explore ways forward.',
+  snapshot: {
+    dates: [
+      { date: 'March 2, 2027', label: 'Curtain Raiser' },
+      { date: 'March 3–4, 2027', label: 'Event & Declaration Signing' },
+      { date: 'March 5, 2027', label: 'Field Visit' },
+    ],
+    details: [
+      { label: 'Participants Expected', value: '400+ Delegates from 10+ Countries' },
+      { label: 'Venue', value: 'Indian Institute of Management, Vishakhapatnam (IIMV)' },
+      { label: 'Theme', value: '“Scaling Agroecology for Climate Resilience and Farmer Prosperity”' },
+    ],
+  },
 }
 
 export const about = {
