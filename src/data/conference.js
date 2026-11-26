@@ -94,12 +94,7 @@ export const schedule = {
 export const venue = {
   intro:
     'One paragraph on travel, weather conditions, dos and don’ts, visa requirements for the international participants, etc.', // TODO
-  details: [
-    { label: 'Hotel Address', value: '' },
-    { label: 'Contact', value: '' },
-    { label: 'E-mail', value: '' },
-    { label: 'Hotel Reservation', value: '' },
-  ],
+  address: 'Anandapuram Mandal, Gambhiram, Andhra Pradesh 531163',
 }
 
 export const timeline = [
