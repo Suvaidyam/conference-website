@@ -24,7 +24,6 @@ export const conference = {
     details: [
       { label: 'Participants Expected', value: '400+ Delegates from 10+ Countries' },
       { label: 'Venue', value: 'Indian Institute of Management, Vishakhapatnam (IIMV)' },
-      { label: 'Theme', value: '“Scaling Agroecology for Climate Resilience and Farmer Prosperity”' },
     ],
   },
 }
